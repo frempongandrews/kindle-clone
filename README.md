@@ -15,12 +15,16 @@ Project based learning definitely makes things easier though.
 <br />
 
 <h3>What I learned</h3>
-- UINavigationController
-- TableView
-- TableFooterView
-- TableView custom cell
-- CollectionView
-- CollectionView pagination
-- CollectionView custom cell
-- Making API call in swift
+<ul>
+    <li>UINavigationController</li>
+    <li>TableView</li>
+    <li>TableFooterView</li>
+    <li>TableView custom cell</li>
+    <li>CollectionView</li>
+    <li>CollectionView pagination</li>
+    <li>CollectionView custom cell</li>
+    <li>Making API call in swift</li>
+</ul>
+
+
 
