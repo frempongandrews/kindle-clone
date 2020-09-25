@@ -65,3 +65,20 @@ extension UIColor{
         return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: alpha)
     }
 }
+
+extension UIBarButtonItem{
+    
+    static func customMenuItem(image: UIImage, width: CGFloat, height: CGFloat, _ target: Any?, action: Selector) -> UIBarButtonItem {
+        let button: UIButton = {
+            let b = UIButton()
+            b.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
+            b.addTarget(target, action: action, for: .touchUpInside)
+            b.anchor(width: width, height: height)
+            return b
+        }()
+        
+        let menuButton = UIBarButtonItem(customView: button)
+        return menuButton
+    }
+    
+}

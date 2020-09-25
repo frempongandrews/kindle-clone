@@ -3,7 +3,7 @@ I am learning iOS development in swift. <br /><br />
 
 This project is from [LetsBuildThatApp](https://www.letsbuildthatapp.com/). <br /><br />
 
-![What is this](kindle-app.png)
+![app pic](kindle-app.png)
 
 
 After reading a few posts and watching a few videos (links below) I have decided to go with the programmatic 

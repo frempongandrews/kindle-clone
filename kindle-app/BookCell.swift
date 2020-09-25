@@ -59,6 +59,7 @@ class BookCell: UITableViewCell{
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         label.textColor = UIColor.white
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         // label.backgroundColor = .red
         return label
@@ -88,25 +89,13 @@ class BookCell: UITableViewCell{
         selectedBackgroundView = selectedView
         
         addSubview(bookCoverImageView)
-//        bookCoverImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 8).isActive = true
-//        bookCoverImageView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
-//        bookCoverImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
-//        bookCoverImageView.widthAnchor.constraint(equalToConstant: 70).isActive = true
         bookCoverImageView.anchor(top: topAnchor, bottom: bottomAnchor, left: leftAnchor, paddingTop: 8, paddingBottom: 8, paddingLeft: 8, width: 70)
         
          addSubview(bookTitleLabel)
-//        bookTitleLabel.leftAnchor.constraint(equalTo: bookCoverImageView.rightAnchor, constant: 8).isActive = true
-//        bookTitleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -8).isActive = true
-//        bookTitleLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
-//        bookTitleLabel.centerYAnchor.constraint(equalTo: bookCoverImageView.centerYAnchor, constant: -8).isActive = true
-        bookTitleLabel.anchor(right: rightAnchor, left: bookCoverImageView.rightAnchor, paddingRight: 8, paddingLeft: 8, height: 20)
+        bookTitleLabel.anchor(right: rightAnchor, left: bookCoverImageView.rightAnchor, paddingRight: 8, paddingLeft: 8)
         bookTitleLabel.centerY(inView: contentView, constant: -8)
         
          addSubview(bookAuthorLabel)
-//        bookAuthorLabel.leftAnchor.constraint(equalTo: bookCoverImageView.rightAnchor, constant: 8).isActive = true
-//        bookAuthorLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -8).isActive = true
-//        bookAuthorLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
-//        bookAuthorLabel.topAnchor.constraint(equalTo: bookTitleLabel.bottomAnchor, constant: 4).isActive = true
         bookAuthorLabel.anchor(top: bookTitleLabel.bottomAnchor, right: rightAnchor, left: bookCoverImageView.rightAnchor, paddingTop: 4, paddingRight: 8, paddingLeft: 8, height: 20)
         
     }
