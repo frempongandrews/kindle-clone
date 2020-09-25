@@ -23,6 +23,8 @@ class BookPageController: UICollectionViewController, UICollectionViewDelegateFl
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        navigationItem.leftBarButtonItem  = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeBook))
     }
     
     func setupBookPage() {
@@ -30,6 +32,10 @@ class BookPageController: UICollectionViewController, UICollectionViewDelegateFl
         layout?.scrollDirection = .horizontal
         layout?.minimumLineSpacing = 0
         collectionView.isPagingEnabled = true
+    }
+    
+    @objc func closeBook() {
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: overridden methods
