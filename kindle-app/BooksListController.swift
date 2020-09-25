@@ -52,6 +52,44 @@ class BooksListController: UITableViewController {
         present(UINavigationController(rootViewController: bookPageController), animated: true, completion: nil)
     }
     
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView: UIView = {
+            let v = UIView()
+            v.backgroundColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
+            return v
+        }()
+        
+        let gridViewBtn: UIButton = {
+           let button = UIButton()
+            button.setImage(#imageLiteral(resourceName: "grid").withRenderingMode(.alwaysOriginal), for: .normal)
+            return button
+        }()
+        
+        let footerSegmentedControl: UISegmentedControl = {
+            let sc = UISegmentedControl(items: ["cloud", "device"])
+            sc.selectedSegmentIndex = 0
+            sc.backgroundColor = .lightGray
+            return sc
+        }()
+        
+        // add subViews to footerView
+        footerView.addSubview(gridViewBtn)
+        footerView.addSubview(footerSegmentedControl)
+        
+        gridViewBtn.anchor(left: footerView.leftAnchor, paddingLeft: 20, width: 30, height: 30)
+        gridViewBtn.centerY(inView: footerView, constant: 0)
+        
+        footerSegmentedControl.anchor(width: 200, height: 30)
+        footerSegmentedControl.centerY(inView: footerView, constant: 0)
+        footerSegmentedControl.centerX(inView: footerView, constant: 0)
+        
+        return footerView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 60
+    }
+    
     // MARK: Custom Methods
     
     func setupNavBarStyles() {
